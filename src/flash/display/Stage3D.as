@@ -20,7 +20,7 @@ import flash.events.EventDispatcher;
 
 [native(cls='Stage3DClass')]
 public class Stage3D extends EventDispatcher {
-  public function Stage3D() {}
+  public native function Stage3D(i:Number);
   public native function get context3D():Context3D;
   public native function get x():Number;
   public native function set x(value:Number):void;

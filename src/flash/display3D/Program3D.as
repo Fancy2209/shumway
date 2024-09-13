@@ -16,10 +16,11 @@
 
 package flash.display3D {
 import flash.utils.ByteArray;
+import flash.display3D.Context3D;
 
 [native(cls='Program3DClass')]
 public final class Program3D {
-  public function Program3D() {}
+  public native function Program3D(context3D: Context3D);
   public native function upload(vertexProgram: ByteArray, fragmentProgram: ByteArray): void;
   public native function dispose(): void;
 }

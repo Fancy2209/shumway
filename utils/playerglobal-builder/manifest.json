@@ -2763,6 +2763,7 @@
       "flash.events:EventDispatcher"
     ],
     "refs": [
+      "flash.display:Stage3D",
       "flash.display3D:Program3D",
       "flash.display3D.textures:Texture",
       "flash.display3D:IndexBuffer3D",
@@ -2871,7 +2872,10 @@
     ],
     "files": [
       "flash/display3D/IndexBuffer3D.as"
-    ]
+    ],
+    "refs": [
+     "flash.display:Stage3D"
+   ]
   },
   {
     "name": "flash/display3D/Program3D",
@@ -2880,7 +2884,10 @@
     ],
     "files": [
       "flash/display3D/Program3D.as"
-    ]
+    ],
+    "refs": [
+     "flash.display:Stage3D"
+   ]
   },
   {
     "name": "flash/display3D/VertexBuffer3D",
@@ -2889,6 +2896,9 @@
     ],
     "files": [
       "flash/display3D/VertexBuffer3D.as"
+    ],
+     "refs": [
+      "flash.display:Stage3D"
     ]
   },
   {

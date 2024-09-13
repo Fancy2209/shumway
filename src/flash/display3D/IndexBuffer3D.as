@@ -16,10 +16,11 @@
 
 package flash.display3D {
 import flash.utils.ByteArray;
+import flash.display3D.Context3D;
 
 [native(cls='IndexBuffer3DClass')]
 public final class IndexBuffer3D {
-  public function IndexBuffer3D() {}
+  public native function IndexBuffer3D(context3D: Context3D, numIndices: Number);
   public native function uploadFromVector(data: Vector, startOffset: int, count: int): void;
   public native function uploadFromByteArray(data: ByteArray, byteArrayOffset: int,
                                              startOffset: int, count: int): void;

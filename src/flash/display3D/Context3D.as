@@ -26,7 +26,7 @@ import flash.utils.ByteArray;
 
 [native(cls='Context3DClass')]
 public final class Context3D extends EventDispatcher {
-  public function Context3D() {}
+  public native function Context3D(id: Number, stage3D: flash.display.Stage3D, renderMode: String = 'auto', profile: String = 'baseline');
   public native function get driverInfo(): String;
   public native function get enableErrorChecking(): Boolean;
   public native function set enableErrorChecking(toggle: Boolean): void;

@@ -16,10 +16,11 @@
 
 package flash.display3D {
 import flash.utils.ByteArray;
+import flash.display3D.Context3D;
 
 [native(cls='VertexBuffer3DClass')]
 public class VertexBuffer3D {
-  public function VertexBuffer3D() {}
+  public native function VertexBuffer3D(context3D: Context3D, numVertices: int, dataPerVertex: int);
   public native function uploadFromVector(data: Vector, startVertex: int, numVertices: int): void;
   public native function uploadFromByteArray(data: ByteArray, byteArrayOffset: int,
                                              startVertex: int, numVertices: int): void;
