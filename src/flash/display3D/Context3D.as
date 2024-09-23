@@ -16,6 +16,7 @@
 
 package flash.display3D {
 import flash.display.BitmapData;
+import flash.display3D.textures.RectangleTexture;
 import flash.display3D.textures.CubeTexture;
 import flash.display3D.textures.Texture;
 import flash.display3D.textures.TextureBase;
@@ -27,9 +28,18 @@ import flash.utils.ByteArray;
 [native(cls='Context3DClass')]
 public final class Context3D extends EventDispatcher {
   public native function Context3D(id: Number, stage3D: flash.display.Stage3D, renderMode: String = 'auto', profile: String = 'baseline');
+  public native function get backBufferHeight(): int;
+  public native function get backBufferWidth(): int;
   public native function get driverInfo(): String;
   public native function get enableErrorChecking(): Boolean;
   public native function set enableErrorChecking(toggle: Boolean): void;
+  public native function get maxBackBufferHeight(): int;
+  public native function set maxBackBufferHeight(value: int): void;
+  public native function get maxBackBufferWidth(): int;
+  public native function set maxBackBufferWidth(value: int): void;
+  public native function get profile(): String;
+  public native static function get supportsVideoTexture(): Boolean;
+  public native function get totalGPUMemory(): Number;
   public native function dispose(): void;
   public native function configureBackBuffer(width: int, height: int, antiAlias: int,
                                              enableDepthAndStencil: Boolean = true,
@@ -105,6 +115,9 @@ public final class Context3D extends EventDispatcher {
   public native function createCubeTexture(size: int, format: String,
                                            optimizeForRenderToTexture: Boolean,
                                            streamingLevels: int = 0): CubeTexture;
+  public native function createRectangleTexture(width: int, height: int, 
+                                                format: String, 
+                                                optimizeForRenderToTexture:Boolean): RectangleTexture;
   public native function createProgram(): Program3D;
   public native function drawToBitmapData(destination: BitmapData): void;
   private native function setRenderToTextureInternal(texture: TextureBase, targetType: int,

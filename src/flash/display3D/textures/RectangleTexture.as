@@ -19,14 +19,11 @@ import flash.display.BitmapData;
 import flash.display3D.Context3D;
 import flash.utils.ByteArray;
 
-[native(cls='TextureClass')]
-public final class Texture extends TextureBase {
-  public native function Texture(context:Context3D, width:int, height:int, format:String, optimizeForRenderToTexture:Boolean, streamingLevels:int = 0);
+[native(cls='RectangleTextureClass')]
+public final class RectangleTexture extends TextureBase {
+  public native function RectangleTexture(context:Context3D, width:int, height:int, format:String, optimizeForRenderToTexture:Boolean, streamingLevels:int = 0);
   public native function uploadFromBitmapData(source: BitmapData, miplevel: uint = 0): void;
   public native function uploadFromByteArray(data: ByteArray, byteArrayOffset: uint,
                                              miplevel: uint = 0): void;
-  public native function uploadCompressedTextureFromByteArray(data: ByteArray,
-                                                              byteArrayOffset: uint,
-                                                              async: Boolean = false): void;
 }
 }

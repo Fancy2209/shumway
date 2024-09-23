@@ -2772,7 +2772,8 @@
       "flash.geom:Matrix3D",
       "flash.display:BitmapData",
       "flash.display3D.textures:TextureBase",
-      "flash.display3D.textures:CubeTexture"
+      "flash.display3D.textures:CubeTexture",
+      "flash.display3D.textures:RectangleTexture"
     ]
   },
   {
@@ -2913,7 +2914,24 @@
       "flash.display3D.textures:TextureBase"
     ],
     "refs": [
-      "flash.display:BitmapData"
+      "flash.display:BitmapData",
+      "flash.display3D:Context3D"
+    ]
+  },
+  {
+    "name": "flash/display3D/textures/RectangleTexture",
+    "defs": [
+      "flash.display3D.textures:RectangleTexture"
+    ],
+    "files": [
+      "flash/display3D/textures/RectangleTexture.as"
+    ],
+    "inherits": [
+      "flash.display3D.textures:TextureBase"
+    ],
+    "refs": [
+      "flash.display:BitmapData",
+      "flash.display3D:Context3D"
     ]
   },
   {
@@ -2928,7 +2946,8 @@
       "flash.display3D.textures:TextureBase"
     ],
     "refs": [
-      "flash.display:BitmapData"
+      "flash.display:BitmapData",
+      "flash.display3D:Context3D"
     ]
   },
   {

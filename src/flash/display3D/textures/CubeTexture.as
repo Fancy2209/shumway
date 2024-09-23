@@ -16,11 +16,14 @@
 
 package flash.display3D.textures {
 import flash.display.BitmapData;
+import flash.display3D.Context3D;
 import flash.utils.ByteArray;
 
 [native(cls='CubeTextureClass')]
 public final class CubeTexture extends TextureBase {
-  public function CubeTexture() {}
+  public native function CubeTexture(context:Context3D, size: int, format: String,
+                                           optimizeForRenderToTexture: Boolean,
+                                           streamingLevels: int = 0);
   public native function uploadFromBitmapData(source: BitmapData, side: uint,
                                               miplevel: uint = 0): void;
   public native function uploadFromByteArray(data: ByteArray, byteArrayOffset: uint, side: uint,
