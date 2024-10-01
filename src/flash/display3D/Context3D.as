@@ -65,39 +65,10 @@ public final class Context3D extends EventDispatcher {
   public native function setColorMask(red: Boolean, green: Boolean, blue: Boolean,
                                       alpha: Boolean): void;
   public native function setDepthTest(depthMask: Boolean, passCompareMode: String): void;
-  public function setTextureAt(sampler: int, texture: TextureBase): void {
-    if (!texture) {
-      setTextureInternal(sampler, null);
-    } else if (texture is Texture) {
-      setTextureInternal(sampler, texture as Texture);
-    } else if (texture is CubeTexture) {
-      setCubeTextureInternal(sampler, texture as CubeTexture);
-    }
-  }
-  public function setRenderToTexture(texture: TextureBase, enableDepthAndStencil: Boolean = false,
-                                     antiAlias: int = 0, surfaceSelector: int = 0): void {
-
-    if (!texture) {
-      throw new ArgumentError("setRenderToTexture requires texture object.");
-    }
-    var type: uint;
-    if (texture is Texture) {
-      if (surfaceSelector !== 0) {
-        throw new ArgumentError("2D Textures need to have surfaceSelector=0");
-      }
-      type = 1;
-    } else if (texture is CubeTexture) {
-      if (surfaceSelector > 5) {
-        throw new ArgumentError("Cube Textures need to have surfaceSelector [0..5]");
-      }
-      type = 2;
-    } else {
-      throw new ArgumentError("color argument not a recognized TextureBase " +
-                              "(can be Texture or CubeTexture)");
-    }
-    setRenderToTextureInternal(texture, type, enableDepthAndStencil, antiAlias, surfaceSelector);
-  }
-  public function setRenderToBackBuffer(): void { notImplemented("setRenderToBackBuffer"); }
+  public native function setTextureAt(sampler: int, texture: TextureBase): void;
+  public native function setRenderToTexture(texture: TextureBase, enableDepthAndStencil: Boolean = false,
+                                     antiAlias: int = 0, surfaceSelector: int = 0): void;
+  public native function setRenderToBackBuffer(): void;
   public native function setCulling(triangleFaceToCull: String): void;
   public native function setStencilActions(triangleFace: String = "frontAndBack",
                                            compareMode: String = "always",
@@ -120,10 +91,5 @@ public final class Context3D extends EventDispatcher {
                                                 optimizeForRenderToTexture:Boolean): RectangleTexture;
   public native function createProgram(): Program3D;
   public native function drawToBitmapData(destination: BitmapData): void;
-  private native function setRenderToTextureInternal(texture: TextureBase, targetType: int,
-                                                     enableDepthAndStencil: Boolean, antiAlias: int,
-                                                     surfaceSelector: int): void;
-  private native function setTextureInternal(sampler: int, texture: Texture): void;
-  private native function setCubeTextureInternal(sampler: int, texture: CubeTexture): void;
 }
 }
