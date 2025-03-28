@@ -18,7 +18,6 @@ package flash.utils {
 import avmplus.FLASH10_FLAGS;
 
 public function describeType(value):XML {
-  trace('Describe Type')
   return avmplus.describeType(value, FLASH10_FLAGS);
 }
 
